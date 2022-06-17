@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+            <title>JavaMon</title>
+        <meta name="description" content="コードを食って成長するモンスターを飼おう">
+    
+    <script>
+            function check1(oldvalue) {
+                undefined === oldvalue && (oldvalue = value);
+                clearcheck = setInterval(repeatcheck,500,oldvalue);
+                function repeatcheck(oldvalue) {
+                    if (value !== oldvalue) {                        
+                        clearInterval(clearcheck);
+                        console.log("check1 value changed from " +
+                            oldvalue + " to " + value);
+                    }
+                }
+            }
+    </script>
+
+    <script type="">
+        function LinkClick(param) {
+          var elem = document.getElementById("JAVA MONSTER");
+    
+          switch (param) {
+            case 0:
+              elem.src = "img/gorira.jpg";
+              break;
+            case 1:
+              elem.src = "img/panda.jpg";
+              break;
+            case 2:
+              elem.src = "img/rakko.jpg";
+              break;
+            case 3:
+              elem.src = "img/koara.jpg";
+              break;
+            case 4:
+              elem.src = "img/neko.jpg";
+              break;
+            default:
+              elem.src = "img/inu.jpg";
+              break;
+          }
+        }
+      </script>
+    <!-- CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        
+
+    </head>
+   
+    <body>
+
+     <div class="home-content wrapper">
+        <h1 style="text-align:center">JAVA MONSTER</h1>
+
+        <p style="text-align:center">こんにちは、今日もおなかがペッコペコクルペッコ</p>
+        <p> <img src="img/javamon.png" alt="モンスター表示"></p>
+        
+        <a class="button" href="question.html">ご飯をあげる</a>
+        <a class="button" href="record.html">記録</a>
+        <a class="button" href="logout.html">ログアウト</a>
+    </div>
+
+    </body>
+</html>
