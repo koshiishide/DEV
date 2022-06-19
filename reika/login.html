@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+    <div class="form-wrapper">
+    <h1>ログイン</h1>
+    <form>
+      <p></p>
+      <div class="form-item">
+        <label for="ID"></label>
+        <input type="ID" name="ID" required="required" placeholder="ID"></input>
+        <!--requiredで「入力してください」-->
+      </div>
+      <div class="form-item">
+        <label for="password"></label>
+        <input type="password" name="password" required="required" placeholder="Password"></input>
+       <!--typeがpasswordなので「●」で表示されている-->
+      </div>
+      <div class="button-panel">
+        <input type="submit" id="login" class="button" title="Sign In" value="ログイン"></input>
+      </div>
+    </form>
+    <div class="form-footer">
+      <p><a href="newaccount.html">＞新しくアカウントをつくる</a></p>
+      <!-- <p><a href="">＞パスワードを忘れた方へ</a></p> --> 
+    </div>
+  </div>
+  <script src = "login.js"></script>
+</body>
+</html>
