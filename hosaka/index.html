@@ -61,7 +61,10 @@
     }
     function addExpVol() {
         const maxVol = 300 // ここに次のレベルまでの経験値を記入
-        const currentVol = 45 // ここに現在の経験値を加算
+        let currentVol = 170 // ここに現在の経験値を加算
+        if (maxVol < currentVol) {
+            currentVol = maxVol
+        }
         const expElement = document.getElementById("exp-inner");
         expElement.style = "width: " + (currentVol / maxVol) * 100 + "%";
     }
