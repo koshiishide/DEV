@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaMon</title>
+    <meta name="description" content="コードを食って成長するモンスターを飼おう">
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="../css/detail.css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="back">
+            <button onclick="goBack()">一覧へ戻る</button>
+        </div>
+        <div class="inner-left">
+            <div class="img-section">
+                画像を入れてね
+            </div>
+        </div>
+
+        <div class="inner-right">
+            <div class="description-section">
+                <h1 id="title" class="title"></h1>
+                <p id="description" class="description"></p>
+            </div>
+
+            <div class="input-section">
+                <form action="answer.html" method="post" name="ansForm">
+                    <textarea name="ans" type="text"></textarea>
+                    <button id="submit-btn">回答する</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
+
+<script>
+    window.onload = function () {
+        // ここに読み込み完了時に実行してほしい内容を書く。
+        console.log('load')
+        addDetailElement();
+    };
+    const questionList = [
+        {
+            number: 1,
+            level: '激ムズ',
+            title: 'hello worldを出力してみよう',
+            description: 'この問題は結構難しいぞ！'
+        },
+        {
+            number: 2,
+            level: '普通',
+            title: 'for を回してみよう',
+            description: 'この問題はforを回して、カレンダーを作成してみよう！'
+        },
+        {
+            number: 3,
+            level: 'ちょー簡単',
+            title: '関数を使いこなそう',
+            description: '関数って知ってる？かなり便利だよ！'
+        },
+        {
+            number: 4,
+            level: '激ムズ',
+            author: '作者D',
+            title: 'title text',
+            description: 'description text'
+        },
+        {
+            number: 5,
+            level: '普通',
+            author: '作者E',
+            title: 'title text',
+            description: 'description text'
+        },
+        {
+            number: 6,
+            level: 'ちょー簡単',
+            author: '作者F',
+            title: 'title text',
+            description: 'description text'
+        },
+    ]
+    function addDetailElement() {
+        const titleElement = document.getElementById("title");
+        const descriptionElement = document.getElementById("description");
+        let url = new URL(window.location.href);
+        let params = url.searchParams;
+        const selectedId = Number(params.get('id'))
+        const item = questionList.find((q) => {
+            console.log(q)
+            return selectedId === q.number
+        })
+        if (!item) {
+            return
+        }
+        const newTitle = document.createTextNode(item.title);
+        const newDescription = document.createTextNode(item.description);
+        titleElement.appendChild(newTitle);
+        descriptionElement.appendChild(newDescription);
+    }
+    function goBack() {
+        location.href = "list.html";
+    }
+    const btn = document.getElementById('submit-btn');
+    btn.addEventListener('click', function() {
+        console.log('submit')
+        // ここで正しい正誤判定を行う
+        if (document.ansForm.ans.value === "print") {
+            alert("正解です");
+        } else {
+            alert("不正解です。やり直せ")
+            return
+        }
+        document.ansForm.submit();
+    })
+</script>

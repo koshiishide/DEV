@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+.container {
+    width: 80%;
+    margin: 80px auto;
+    text-align: center;
+    position: relative;
+}
+
+.container__title {
+    /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
+    font-size: 22px;
+    color: #333;
+    padding-top: 30px;
+}
+
+.container__description {
+    /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
+    font-size: 16px;
+    color: rgb(145, 145, 145);
+    padding-bottom: 30px;
+}
+
+.back {
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.back button {
+    font-weight: normal;
+    font-size: 14px;
+    width: 120px;
+    height: 32px;
+    background: #fff;
+    color: #0bd;
+    border-radius: 10px;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.back button:hover {
+    transition: 0.6s;
+    opacity: 0.6;
+}
+
+
+.items-section {
+    width: 100%;
+    margin: 40px auto;
+}
+
+.items-section .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #cecece;
+}
+
+/*左側のコンテンツ*/
+.items-section .item .inner-left {
+    width: auto;
+    min-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.items-section .item .inner-left .num,
+.items-section .item .inner-left .level,
+.items-section .item .inner-left .author
+{
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
+    color: #505050;
+    margin: 10px 20px;
+}
+
+.items-section .item .inner-left .level,
+.items-section .item .inner-left .author {
+    width: 120px;
+}
+
+/*右側のコンテンツ*/
+.items-section .item .inner-right {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.items-section .item .inner-right button {
+    /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
+    font-weight: bold;
+    font-size: 18px;
+    width: 180px;
+    height: 40px;
+    background: #0bd;
+    color: #fff;
+    border-radius: 10px;
+    border: 2px solid #0bd;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.items-section .item .inner-right button:hover {
+    transition: 0.6s;
+    background: #fff;
+    color: #0bd;
+}

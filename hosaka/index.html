@@ -1,70 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-            <title>JavaMon</title>
-        <meta name="description" content="コードを食って成長するモンスターを飼おう">
-    
-    <script>
-            function check1(oldvalue) {
-                undefined === oldvalue && (oldvalue = value);
-                clearcheck = setInterval(repeatcheck,500,oldvalue);
-                function repeatcheck(oldvalue) {
-                    if (value !== oldvalue) {                        
-                        clearInterval(clearcheck);
-                        console.log("check1 value changed from " +
-                            oldvalue + " to " + value);
-                    }
-                }
-            }
-    </script>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaMon</title>
+    <meta name="description" content="コードを食って成長するモンスターを飼おう">
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="experience-section">
+            <p id="current-level" class="experience-level"></p>
+            <div class="exp-bar">
+                <div id="exp-inner"></div>
+            </div>
+        </div>
+        <h1>JAVA MONSTER</h1>
+        <p>こんにちは、今日もおなかがペッコペコクルペッコ</p>
+        <div class="img-section">
+            <img src="img/javamon.png" alt="モンスター表示">
+        </div>
 
-    <script type="">
-        function LinkClick(param) {
-          var elem = document.getElementById("JAVA MONSTER");
-    
-          switch (param) {
-            case 0:
-              elem.src = "img/gorira.jpg";
-              break;
-            case 1:
-              elem.src = "img/panda.jpg";
-              break;
-            case 2:
-              elem.src = "img/rakko.jpg";
-              break;
-            case 3:
-              elem.src = "img/koara.jpg";
-              break;
-            case 4:
-              elem.src = "img/neko.jpg";
-              break;
-            default:
-              elem.src = "img/inu.jpg";
-              break;
-          }
-        }
-      </script>
-    <!-- CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-
-        
-
-    </head>
-   
-    <body>
-
-     <div class="home-content wrapper">
-        <h1 style="text-align:center">JAVA MONSTER</h1>
-
-        <p style="text-align:center">こんにちは、今日もおなかがペッコペコクルペッコ</p>
-        <p> <img src="img/javamon.png" alt="モンスター表示"></p>
-        
-        <a class="button" href="question.html">ご飯をあげる</a>
-        <a class="button" href="record.html">記録</a>
-        <a class="button" href="logout.html">ログアウト</a>
+        <div class="buttons-section">
+            <button onclick="buttonClick('list')">ご飯をあげる</button>
+            <button onclick="buttonClick('logs')">記録</button>
+            <button onclick="buttonClick('logout')">ログアウト</button>
+        </div>
     </div>
-
-    </body>
+</main>
+</body>
 </html>
+
+<script>
+    window.onload = function () {
+        // ここに読み込み完了時に実行してほしい内容を書く。
+        console.log('load')
+        const currentLevelElement = document.getElementById("current-level");
+        const currentLevel = document.createTextNode("レベル" + String(3)); // 現在のレベルを入れてね
+        currentLevelElement.appendChild(currentLevel);
+        addExpVol();
+    };
+    function buttonClick(page){
+        switch (page) {
+            case 'list':
+                location.href = "question/list.html";
+                break;
+            case 'logs':
+                alert('記録へ遷移するよ')
+                console.log('記録へ');
+                break;
+            case 'logout':
+                alert('ログアウトするよ')
+                console.log('ログアウト');
+                break;
+            default:
+                console.log('エラー');
+        }
+    }
+    function addExpVol() {
+        const maxVol = 300 // ここに次のレベルまでの経験値を記入
+        const currentVol = 45 // ここに現在の経験値を加算
+        const expElement = document.getElementById("exp-inner");
+        expElement.style = "width: " + (currentVol / maxVol) * 100 + "%";
+    }
+</script>
