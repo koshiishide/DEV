@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>JavaMon</title>
@@ -7,85 +8,123 @@
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <!--フォントの読み込み-->
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <style>
+        div {
+            /*セレクタに font-family を指定*/
+            font-family: 'DotGothic16', sans-serif;
+            font-size: 40px;
+        }
+    </style>
+
+    <!-- jsの処理内容 -->
+    <script>
+        window.onload = function () {
+            // ここに読み込み完了時に実行してほしい内容を書く。
+            //onloadイベントとは、ページや画像読み込みが完了した時点でイベントを実行するもの
+            console.log('load')
+            const currentLevelElement = document.getElementById("current-level");
+            const currentLevel = document.createTextNode("レベル" + String(20)); // 現在のレベル入力
+            currentLevelElement.appendChild(currentLevel);
+            addExpVol();
+        };
+
+        //ボタンクリック後の画面遷移をやりあーす
+        function buttonClick(page) {
+            switch (page) {
+                case 'list':
+                    location.href = "question/list.html";//飛ぶリンクはここでぇーす
+                    break;
+                case 'logs':
+                    location.href = "record/record.html";
+                    alert('記録へ遷移するよ')
+                    console.log('記録へ');
+                    break;
+                case 'logout':
+                    alert('ログアウトするよ')
+                    console.log('ログアウト');
+                    break;
+                default:
+                    console.log('エラー');
+            }
+        };
+
+        //時間ごとにあいさつ文を用意
+        function Greeting() {
+            var nt = new Date();
+            var hr = nt.getHours();
+
+            if (hr <= 1) { document.write('夜中になりましたJavaのお時間です。'); }
+            else if (hr <= 3) { document.write('そろそろ寝た方がいいんじゃ…？'); }
+            else if (hr <= 5) { document.write('おはよう…寝ましたか？？'); }
+            else if (hr <= 7) { document.write('おはようございます。今日も勉強だ！'); }
+            else if (hr <= 9) { document.write('午前中ですねJavaのお時間です'); }
+            else if (hr <= 11) { document.write('お昼ご飯の前にJavaしましょう'); }
+            else if (hr <= 13) { document.write('お昼のお供にコーディング'); }
+            else if (hr <= 15) { document.write('おやつがおいしいJava書こう！'); }
+            else if (hr <= 17) { document.write('そろそろ夕方ですね。Javaのお時間です。'); }
+            else if (hr <= 19) { document.write('こんばんは、Java書きましょう！'); }
+            else if (hr <= 21) { document.write('夜も更けてきました。勉強しましょう。'); }
+            else if (hr <= 23) { document.write('寝る前にJava書きましょう。'); }
+        };
+
+        function addExpVol() {
+            const maxVol = 600 // ここに次のレベルまでの経験値を記入せいー
+            let currentVol = 100 // ここに現在の経験値を加算せいー
+            if (maxVol < currentVol) {
+                currentVol = maxVol
+            }
+            const expElement = document.getElementById("exp-inner");
+            expElement.style = "width: " + (currentVol / maxVol) * 100 + "%";
+        }
+    </script>
+
 </head>
+
 <body>
-<main>//クラスと引数を定義していくぜいぜい
-    <div class="container">
-        <div class="experience-section">
-            <p id="current-level" class="experience-level"></p>
-            <div class="exp-bar">
-                <div id="exp-inner"></div>
+    <main>
+        <div class="container">
+            <div class="experience-section">
+                <p id="current-level" class="experience-level"></p>
+                <div class="exp-bar">
+                    <div id="exp-inner"></div>
+                </div>
+            </div>
+            <h1>JAVA MONSTER</h1>
+
+            <script type="text/javascript">
+                Greeting();
+            </script>
+
+            <div class="img-section">
+                <img src="img/javamon.png" alt="モンスター表示領域">
+            </div>
+
+            <div class="svg__container">
+                <div class="buttons-section">
+                    <a href="question/list.html" class="btn btn-svg">
+                        <svg>
+                            <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+                        </svg>
+                        <span>ごはんをあげる</span>
+                    </a>
+                    <a href="record/record.htm" class="btn btn-svg">
+                        <svg>
+                            <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+                        </svg>
+                        <span>記録</span>
+                    </a>
+                    <a href="" class="btn btn-svg">
+                        <svg>
+                            <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+                        </svg>
+                        <span>ログアウト</span>
+                    </a>
+                </div>
             </div>
         </div>
-        <h1>JAVA MONSTER</h1>
-        <p>こんにちは、今日もおなかがペッコペコクルペッコ</p>
-        <div class="img-section">
-            <img src="img/javamon.png" alt="モンスター表示領域">
-        </div>
-       
-        <div class="svg__container">
-         <div class="buttons-section">
-            <a href="question/list.html" class="btn btn-svg">
-                <svg viewBox="0 0 500 500">
-                  <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
-                </svg>
-                <span>ごはんをあげる</span>
-            </a>
-            <a href="record/record.htm" class="btn btn-svg">
-                <svg viewBox="0 0 500 500">
-                  <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
-                </svg>
-                <span>記録</span>
-            </a>
-            <a href="" class="btn btn-svg">
-                <svg viewBox="0 0 500 500">
-                  <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
-                </svg>
-                <span>ログアウト</span>
-              </a>
-            </div> 
-        </div> 
-    </div>
-</main>
+    </main>
 </body>
-</html>
 
-<script>
-    window.onload = function () {
-        // ここに読み込み完了時に実行してほしい内容を書く。
-        //onloadイベントとは、ページや画像読み込みが完了した時点でイベントを実行するもの
-        console.log('load')
-        const currentLevelElement = document.getElementById("current-level");
-        const currentLevel = document.createTextNode("レベル" + String(3)); // 現在のレベルを入れてね
-        currentLevelElement.appendChild(currentLevel);
-        addExpVol();
-    };
-    //ボタンクリック後の画面遷移をやりあーす
-    function buttonClick(page){
-        switch (page) {
-            case 'list':
-                location.href = "question/list.html";//飛ぶリンクはここでぇーす
-                break;
-            case 'logs':
-                location.href = "record/record.html";
-                alert('記録へ遷移するよ')
-                console.log('記録へ');
-                break;
-            case 'logout':
-                alert('ログアウトするよ')
-                console.log('ログアウト');
-                break;
-            default:
-                console.log('エラー');
-        }
-    }
-    function addExpVol() {
-        const maxVol = 300 // ここに次のレベルまでの経験値を記入
-        let currentVol = 170 // ここに現在の経験値を加算
-        if (maxVol < currentVol) {
-            currentVol = maxVol
-        }
-        const expElement = document.getElementById("exp-inner");
-        expElement.style = "width: " + (currentVol / maxVol) * 100 + "%";
-    }
-</script>
+</html>
