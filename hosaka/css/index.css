@@ -7,7 +7,7 @@
 }
 
 .experience-section {
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
 }
@@ -15,7 +15,7 @@
 .experience-level {
     /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
     font-size: 16px;
-    color: #828282;
+    color: #000000;
 }
 .exp-bar {
     margin-left: 10px;
@@ -27,20 +27,20 @@
 
 #exp-inner {
     height: 20px;
-    background: rgb(255, 166, 0);
+    background: rgb(0, 255, 8);
     border-radius: 4px;
 }
 
 h1 {
     /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
-    font-size: 22px;
-    color: rgb(255, 166, 0);
+    font-size: 70px;
+    color: rgb(0, 0, 0);
 }
 
 p {
     /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
     font-size: 18px;
-    color: rgb(255, 166, 0);
+    color: rgb(0, 0, 0);
 }
 
 .img-section {
@@ -53,16 +53,18 @@ p {
 }
 
 .buttons-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .buttons-section button {
     /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
     font-weight: bold;
-    font-size: 18px;
-    width: 180px;
+    font-family: "DotGothic16";
+    font-size: 90px;
+    width: 200px;
     height: 40px;
     color: rgb(0, 0, 0);
     border-radius: 10px;
@@ -119,6 +121,7 @@ button.btn {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
+  margin-top: 15px;
 }
 
 a.btn-svg {
