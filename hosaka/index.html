@@ -9,7 +9,7 @@
     <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-<main>
+<main>//クラスと引数を定義していくぜいぜい
     <div class="container">
         <div class="experience-section">
             <p id="current-level" class="experience-level"></p>
@@ -20,14 +20,31 @@
         <h1>JAVA MONSTER</h1>
         <p>こんにちは、今日もおなかがペッコペコクルペッコ</p>
         <div class="img-section">
-            <img src="img/javamon.png" alt="モンスター表示">
+            <img src="img/javamon.png" alt="モンスター表示領域">
         </div>
-
-        <div class="buttons-section">
-            <button onclick="buttonClick('list')">ご飯をあげる</button>
-            <button onclick="buttonClick('logs')">記録</button>
-            <button onclick="buttonClick('logout')">ログアウト</button>
-        </div>
+       
+        <div class="svg__container">
+         <div class="buttons-section">
+            <a href="question/list.html" class="btn btn-svg">
+                <svg viewBox="0 0 500 500">
+                  <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+                </svg>
+                <span>ごはんをあげる</span>
+            </a>
+            <a href="record/record.htm" class="btn btn-svg">
+                <svg viewBox="0 0 500 500">
+                  <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+                </svg>
+                <span>記録</span>
+            </a>
+            <a href="" class="btn btn-svg">
+                <svg viewBox="0 0 500 500">
+                  <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+                </svg>
+                <span>ログアウト</span>
+              </a>
+            </div> 
+        </div> 
     </div>
 </main>
 </body>
@@ -36,18 +53,21 @@
 <script>
     window.onload = function () {
         // ここに読み込み完了時に実行してほしい内容を書く。
+        //onloadイベントとは、ページや画像読み込みが完了した時点でイベントを実行するもの
         console.log('load')
         const currentLevelElement = document.getElementById("current-level");
         const currentLevel = document.createTextNode("レベル" + String(3)); // 現在のレベルを入れてね
         currentLevelElement.appendChild(currentLevel);
         addExpVol();
     };
+    //ボタンクリック後の画面遷移をやりあーす
     function buttonClick(page){
         switch (page) {
             case 'list':
-                location.href = "question/list.html";
+                location.href = "question/list.html";//飛ぶリンクはここでぇーす
                 break;
             case 'logs':
+                location.href = "record/record.html";
                 alert('記録へ遷移するよ')
                 console.log('記録へ');
                 break;
