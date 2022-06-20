@@ -4,18 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>フォーム</title>
+<title>新規登録</title>
 </head>
 <body>
-<h1>ログイン</h1>
 
-<form action="/Form/Validation1" method="post">
+<form action="/Form/Validation2" method="post">
 ユーザーid:<input type="text" name="id"><br>
 パスワード:<input type="password" name="password"><br>
-<input type="submit" value="ログイン"><br>
+<input type="submit" value="新規登録"><br>
 </form>
-
- <input type="button" onclick="location.href='./shinki.jsp'" value="新規登録">
 
 </body>
 </html>

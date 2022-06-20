@@ -14,8 +14,14 @@
 <body>
 <% if(loginUser != null) { %>
   <p>ログインに成功しました</p>
+  
+  <%
+    application.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response); // B.jspへフォワード
+%>
+    
 <%} else { %> 
   <p>ログインに失敗しました</p>
+  
 <%} %>  
 </body>
 </html>
