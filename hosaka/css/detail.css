@@ -44,9 +44,9 @@
     align-items: center;
 }
 
-.inner-left .img-section {
+/*.inner-left .img-section {
     /*必要に応じて変更してね*/
-}
+
 
 .inner-right {
     width: 40%;
@@ -104,4 +104,3 @@ form button:hover {
     background: #fff;
     color: #0bd;
 }
-

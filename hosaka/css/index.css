@@ -20,7 +20,7 @@
 .exp-bar {
     margin-left: 10px;
     width: 200px;
-    height: 20px;
+    height: 22px;
     border: 1px solid #828282;
     border-radius: 4px;
 }
@@ -173,4 +173,12 @@ a.btn-svg span {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.full {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: src="background.css"
+    center / cover;
 }

@@ -7,6 +7,14 @@
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="../css/list.css" rel="stylesheet">
+         <!--フォントの読み込み-->
+         <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet"> 
+         <style>
+           div { /*セレクタに font-family を指定*/
+             font-family: 'DotGothic16', sans-serif;
+             font-size: 16px;
+           }
+         </style>
 </head>
 <body>
 <main>
@@ -95,7 +103,7 @@
             const newAuthor = document.createTextNode(q.author);
             newAuthorElement.classList.add("author")
             const newButtonElement = document.createElement("button");
-            const newButtonText = document.createTextNode("問題を回答");
+            const newButtonText = document.createTextNode("問題を解答");
             newButtonElement.onclick= function() { // onclick には関数を入れる
                 // "op.value = a.value"
                 const questionId = q.number; // 問題のidを入れてね

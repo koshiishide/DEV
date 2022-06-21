@@ -3,11 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaMon</title>
     <meta name="description" content="コードを食って成長するモンスターを飼おう">
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <ilnk href= "bg.css" rel="stylesheet">
+
     <!--フォントの読み込み-->
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <style>
@@ -23,6 +26,7 @@
 
 <body>
     <main>
+        <div canvas id="canvas"></canvas></div>
         <div class="container">
             <div class="experience-section">
                 <p id="current-level" class="experience-level"></p>
@@ -44,7 +48,7 @@
                 <div class="buttons-section">
                     <a href="question/list.html" class="btn btn-svg">
                         <svg>
-                            <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+                            <rect x="1" y="1" rx="0" fill="none" width=200 height="50"></rect>
                         </svg>
                         <span>ごはんをあげる</span>
                     </a>
