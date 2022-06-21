@@ -1,4 +1,32 @@
+  
+  $.ajax({
+    type: "GET",
+    url: "https://18.176.81.208/api.rsc/game_public_users/",
+    dataType: "json",
+    headers: { 'x-cdata-authtoken': '2s9K2p9o6P9j3s7A5k8m',
+    'Access-Control-Allow-Origin': '*'
+  }
 
+  })
+  // Ajaxリクエストが成功した場合
+  .done(function(data){
+    alert('成功!');
+    alert(data);
+    console.log(JSON.stringify(data));
+    var sample = JSON.stringify(data);
+  })
+  // Ajaxリクエストが失敗した場合
+  .fail(function(XMLHttpRequest, textStatus, errorThrown){
+    alert(errorThrown);
+  });
+/*
+$.get("https://18.176.81.208/api.rsc/game_public_users/", { "@authtoken": "2s9K2p9o6P9j3s7A5k8m" }, 
+function(data) {
+  $("#result").html(JSON.stringify(data));
+  console.log(JSON.stringify(data));
+  alert(data);
+});
+*/
 function Greeting() {
     let nt = new Date();
     let hr = nt.getHours();
@@ -281,3 +309,12 @@ var livePatern = {
     },
     "retina_detect":true
   });
+
+// Request with custom header
+/*
+$.ajax({
+  url: 'https://18.176.81.208/api.rsc/game_public_users/',
+  headers: { 'x-cdata-authtoken:': '2s9K2p9o6P9j3s7A5k8m' }
+  success: function(response){ console.log(response)
+});
+*/
