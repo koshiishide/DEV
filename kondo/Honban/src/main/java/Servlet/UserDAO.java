@@ -9,12 +9,12 @@ public class UserDAO  {
 		 
 		 */
 		//try excep	
-		System.out.print("##################findByLogin#####################");
+		//System.out.print("##################findByLogin#####################");
 		String id = user.getId();
 		String password = user.getPassword();
-		System.out.print(password+":password\n");
+		//System.out.print(password+":password\n");
 		String password2 = user2.getPassword();
-		System.out.print(password2+":password2\n");
+		//System.out.print(password2+":password2\n");
 		
 		if (password.equals(password2)) {
 			System.out.print("Succed");
@@ -36,25 +36,7 @@ public class UserDAO  {
 //		}else{	
 //			return user;
 //	}}
-	public User RegisterAccount(User user,User user2) {
-		//登録処理をする
-		//user2を検証する
-		
-		//try except
-		String id = user.getId();
-		String password = user.getPassword();
-		
-		if(id.isEmpty()) {
-			return null;
-			}
-			int idLen = id.length();
-			int passLen =  password.length();
-			
-			if(idLen > 5 || passLen >5) {
-			return null;
-			
-		}else{		
-			return user;
+	public boolean RegisterAccount(User user) {
+	return true;
 	}
-}
 }
