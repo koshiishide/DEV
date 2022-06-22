@@ -7,6 +7,11 @@
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="../css/list.css" rel="stylesheet">
+    <link href="../question/grid.css" rel="stylesheet">
+    <link href="../question/gadeUp.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/4-14/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/4-14/css/4-14.css">
+
          <!--フォントの読み込み-->
          <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet"> 
          <style>
@@ -17,6 +22,7 @@
          </style>
 </head>
 <body>
+
 <main>
     <div class="container">
         <div class="back">
@@ -25,9 +31,15 @@
         <h1 class="container__title">問題一覧</h1>
         <p class="container__description">得意な問題を指定してね</p>
 
+        <div class="box fadeUpTrigger"></div>
         <div id="questions" class="items-section" />
-    </div>
+        </div>
+</div>
+
 </main>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="question/list.js"></script><!--←本体の下に設置しないと動きません！-->
 </body>
 </html>
 
@@ -86,9 +98,11 @@
     function addListElement () {
         console.log('addListElement')
         const itemContents = document.getElementById("questions");
-        questionList.filter((q) => {
+        questionList.filter((q, index) => {
             const newMainElement = document.createElement("div");
-            newMainElement.classList.add("item")
+            const delayAtTime = "0." + String((index + 1))
+            newMainElement.classList.add("item","fadeUp")
+            newMainElement.style.animationDelay = delayAtTime + "s" ;
             const newLeftElement = document.createElement("div");
             newLeftElement.classList.add("inner-left")
             const newRightElement = document.createElement("div");

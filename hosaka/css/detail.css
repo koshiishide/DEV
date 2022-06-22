@@ -16,6 +16,7 @@
 }
 
 .back button {
+    
     font-weight: normal;
     font-size: 14px;
     width: 120px;
@@ -87,14 +88,15 @@ form textarea {
 
 form button {
     /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
+    font-family: 'DotGothic16', sans-serif;
     font-weight: bold;
     font-size: 18px;
     width: 180px;
     height: 40px;
-    background: #0bd;
+    background: #505050;
     color: #fff;
     border-radius: 10px;
-    border: 2px solid #0bd;
+    border: 2px solid rgb(0, 0, 0);
     margin: 40px auto;
     cursor: pointer;
 }
@@ -102,5 +104,5 @@ form button {
 form button:hover {
     transition: 0.6s;
     background: #fff;
-    color: #0bd;
+    color: rgb(0, 0, 0);
 }

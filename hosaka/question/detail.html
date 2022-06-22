@@ -7,6 +7,21 @@
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="../css/detail.css" rel="stylesheet">
+    <link href="../question/grid.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <style>
+
+      div { /*セレクタに font-family を指定*/
+
+        font-family: 'DotGothic16', sans-serif;
+
+        font-size: 16px;
+
+      }
+
+    </style>
 </head>
 <body>
 <main>
@@ -20,22 +35,40 @@
             </div>
         </div>
 
-    //リスト一行に対する引数を定義しているニャ    
+    
         <div class="inner-right">
             <div class="description-section">
                 <h1 id="title" class="title"></h1>
                 <p id="description" class="description"></p>
             </div>
-
+            
+                <!--なんかここのボタン押すと"answer.html"にしか飛べなかったのでコメントアウト-->
             <div class="input-section">
                 <form action="answer.html" method="post" name="ansForm">
                     <textarea name="ans" type="text"></textarea>
                     <button id="submit-btn">回答する</button>
                 </form>
             </div>
+
+            <!--
+            <div class="input-section">
+                <form action="answer.html" method="post" name="ansForm">
+                    <textarea name="ans" type="text"></textarea>
+                </form>
+            </div>
+
+            <div class="btn btn-svg" id="btn">
+                <svg>
+                  <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+                </svg>
+                <span>解答する</span>
+            </div>
+            -->
+
         </div>
     </div>
 </main>
+<script src="../js/exp.js"></script>
 </body>
 </html>
 
@@ -113,9 +146,11 @@
         // ここで正しい正誤判定を行う
         if (document.ansForm.ans.value === "print") {
             alert("正解です");
+            window.location.replace("answer.html");
+            currentVol+=20;
         } else {
             alert("不正解です。やり直せ")
-            return
+            window.location.replace("mistake.html");
         }
         document.ansForm.submit();
     })

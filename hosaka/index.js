@@ -5,20 +5,16 @@
     dataType: "json",
     headers: { 'x-cdata-authtoken': '2s9K2p9o6P9j3s7A5k8m',
     'Access-Control-Allow-Origin': '*'
-  }
-
-  })
-  // Ajaxリクエストが成功した場合
+  }})
   .done(function(data){
     alert('成功!');
-    alert(data);
     console.log(JSON.stringify(data));
-    var sample = JSON.stringify(data);
   })
-  // Ajaxリクエストが失敗した場合
   .fail(function(XMLHttpRequest, textStatus, errorThrown){
     alert(errorThrown);
   });
+
+
 /*
 $.get("https://18.176.81.208/api.rsc/game_public_users/", { "@authtoken": "2s9K2p9o6P9j3s7A5k8m" }, 
 function(data) {
@@ -27,6 +23,9 @@ function(data) {
   alert(data);
 });
 */
+
+
+
 function Greeting() {
     let nt = new Date();
     let hr = nt.getHours();
@@ -45,25 +44,6 @@ else if (hr <= 17) { document.write('そろそろ夕方ですね。<br>Javaの�
     else if (hr <= 23) { document.write('寝る前にJava書きましょう。'); }
 }
 
-function addExpVol() {
-    const maxVol = 600 // ここに次のレベルまでの経験値を記入せいー
-    let currentVol = 100 // ここに現在の経験値を加算せいー
-    if (maxVol < currentVol) {
-        currentVol = maxVol
-    }
-    const expElement = document.getElementById("exp-inner");
-    expElement.style = "width: " + (currentVol / maxVol) * 100 + "%";
-}
-
-window.onload = function () {
-    // ここに読み込み完了時に実行してほしい内容を書く。
-    //onloadイベントとは、ページや画像読み込みが完了した時点でイベントを実行するもの
-    console.log('load')
-    const currentLevelElement = document.getElementById("current-level");
-    const currentLevel = document.createTextNode("レベル" + String(20)); // 現在のレベル入力
-    currentLevelElement.appendChild(currentLevel);
-    addExpVol();
-};
 
     
 
