@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaMon</title>
+    <meta name="description" content="コードを食って成長するモンスターを飼おう">
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="../css/list.css" rel="stylesheet">
+    <link href="../question/grid.css" rel="stylesheet">
+    <link href="../question/gadeUp.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/4-14/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/4-14/css/4-14.css">
+
+         <!--フォントの読み込み-->
+         <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet"> 
+         <style>
+           div { /*セレクタに font-family を指定*/
+             font-family: 'DotGothic16', sans-serif;
+             font-size: 16px;
+           }
+         </style>
+</head>
+<body>
+
+<main>
+    <div class="container">
+        <div class="back">
+            <button onclick="goBack()">トップへ戻る</button>
+        </div>
+        <h1 class="container__title">問題一覧</h1>
+        <p class="container__description">得意な問題を指定してね</p>
+
+        <div class="box fadeUpTrigger"></div>
+        <div id="questions" class="items-section" />
+        </div>
+</div>
+
+</main>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="question/list.js"></script><!--←本体の下に設置しないと動きません！-->
+</body>
+</html>
+
+<script>
+    window.onload = function () {
+        // ここに読み込み完了時に実行してほしい内容を書く。
+        console.log('load')
+        addListElement();
+    };
+    // このしたのlistに問題のリストを入れれば動作可能
+    // todo: idなどの指定は別途必要
+    const questionList = [
+        {
+            number: 1,
+            level: '激ムズ',
+            author: '作者A',
+            title: 'title text',
+            description: 'description text'
+        },
+        {
+            number: 2,
+            level: '普通',
+            author: '作者B',
+            title: 'title text',
+            description: 'description text'
+        },
+        {
+            number: 3,
+            level: 'ちょー簡単',
+            author: '作者C',
+            title: 'title text',
+            description: 'description text'
+        },
+        {
+            number: 4,
+            level: '激ムズ',
+            author: '作者D',
+            title: 'title text',
+            description: 'description text'
+        },
+        {
+            number: 5,
+            level: '普通',
+            author: '作者E',
+            title: 'title text',
+            description: 'description text'
+        },
+        {
+            number: 6,
+            level: 'ちょー簡単',
+            author: '作者F',
+            title: 'title text',
+            description: 'description text'
+        },
+    ]
+    function addListElement () {
+        console.log('addListElement')
+        const itemContents = document.getElementById("questions");
+        questionList.filter((q, index) => {
+            const newMainElement = document.createElement("div");
+            const delayAtTime = "0." + String((index + 1))
+            newMainElement.classList.add("item","fadeUp")
+            newMainElement.style.animationDelay = delayAtTime + "s" ;
+            const newLeftElement = document.createElement("div");
+            newLeftElement.classList.add("inner-left")
+            const newRightElement = document.createElement("div");
+            newRightElement.classList.add("inner-right")
+            const newNumberElement = document.createElement("p");
+            const newNum = document.createTextNode(q.number);
+            newNumberElement.classList.add("num")
+            const newLevelElement = document.createElement("p");
+            const newLevel = document.createTextNode(q.level);
+            newLevelElement.classList.add("level")
+            const newAuthorElement = document.createElement("p");
+            const newAuthor = document.createTextNode(q.author);
+            newAuthorElement.classList.add("author")
+            const newButtonElement = document.createElement("button");
+            const newButtonText = document.createTextNode("問題を解答");
+            newButtonElement.onclick= function() { // onclick には関数を入れる
+                // "op.value = a.value"
+                const questionId = q.number; // 問題のidを入れてね
+                // alert(questionId)
+                location.href = "detail.html?id=" + q.number;
+                // outやtextはこれの前にvarで宣言しているので使えますが、
+                // そうでない場合はidを付けてdocument.getElementById('aaa').value という感じで。
+            };
+            // テキストを挿入
+            newLevelElement.appendChild(newLevel);
+            newNumberElement.appendChild(newNum);
+            newAuthorElement.appendChild(newAuthor);
+            newButtonElement.appendChild(newButtonText);
+            // 要素に追加
+            newLeftElement.appendChild(newNumberElement);
+            newLeftElement.appendChild(newLevelElement);
+            newLeftElement.appendChild(newAuthorElement);
+            newRightElement.appendChild(newButtonElement);
+            // main要素にまとめる
+            newMainElement.appendChild(newLeftElement);
+            newMainElement.appendChild(newRightElement);
+            // 指定したdivに挿入する
+            itemContents.appendChild(newMainElement)
+            return q
+        })
+    }
+    function goBack() {
+        location.href = "../index.html";
+    }
+</script>

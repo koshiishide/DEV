@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+     
+     <style>
+
+       div { /*セレクタに font-family を指定*/
+
+         font-family: 'DotGothic16', sans-serif;
+
+         font-size: 16px;
+
+       }
+
+     </style>
+
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div id="wrapper">
+    <div class="form-wrapper">
+    <h1>ログイン</h1>
+    <form>
+      <div class="form-item">
+        <label for="ID"></label>
+        <input type="text" id="ID" required="required" placeholder="ID"></input>
+        <!--requiredで「入力してください」-->
+      </div>
+      <div class="form-item">
+        <label for="password"></label>
+        <input type="password" id="password" required="required" placeholder="password"></input>
+       <!--typeがpasswordなので「●」で表示されている-->
+      </div>
+      <div class="button-panel">
+        <input type="submit" id="rogu" class="button" title="Sign In" value="ログイン"></input>
+      </div>
+      <p id="error"></p>
+    </form>
+    <div class="form-footer">
+      <p><a href="newaccount.html">＞新しくアカウントをつくる</a></p>
+      <!-- <p><a href="">＞パスワードを忘れた方へ</a></p> --> 
+    </div>
+    <p id="error"></p>
+    </div>
+  </div>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

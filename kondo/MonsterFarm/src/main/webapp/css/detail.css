@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+.container {
+    width: 80%;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.back {
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.back button {
+    
+    font-weight: normal;
+    font-size: 14px;
+    width: 120px;
+    height: 32px;
+    background: #fff;
+    color: #0bd;
+    border-radius: 10px;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.back button:hover {
+    transition: 0.6s;
+    opacity: 0.6;
+}
+
+.inner-left {
+    /*必要に応じて変更してね*/
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background: rgba(0, 187, 221, 0.27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*.inner-left .img-section {
+    /*必要に応じて変更してね*/
+
+
+.inner-right {
+    width: 40%;
+    margin: auto;
+    text-align: left;
+}
+
+.inner-right .description-section .title{
+    /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
+    font-size: 22px;
+    color: #505050;
+}
+
+.inner-right .description-section .description{
+    /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
+    font-size: 14px;
+    color: #828282;
+}
+
+.inner-right .input-section form {
+    width: 95%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form textarea {
+    width: 100%;
+    min-height: 300px;
+    border: 1px solid #828282;
+    border-radius: 10px;
+    background: #333333;
+    color: #fff;
+    padding: 10px;
+}
+
+form button {
+    /*font-family: "Yu Gothic Medium"; 任意のフォントを指定してね*/
+    font-family: 'DotGothic16', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    width: 180px;
+    height: 40px;
+    background: #505050;
+    color: #fff;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 40px auto;
+    cursor: pointer;
+}
+
+form button:hover {
+    transition: 0.6s;
+    background: #fff;
+    color: rgb(0, 0, 0);
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaMon</title>
+    <meta name="description" content="コードを食って成長するモンスターを飼おう">
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="../css/ans.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <style>
+
+      div { /*セレクタに font-family を指定*/
+
+        font-family: 'DotGothic16', sans-serif;
+
+        font-size: 16px;
+
+      }
+
+    </style>
+
+</head>
+<body>
+<div id="particles-js"></div>
+<div iD="wrapper">    
+<main>
+    <div class="container">
+        <div class="top-section">
+            <h1 class="result">大正解！大変よくできました！</h1>
+            <div class="experience-section">
+                <p id="current-level" class="experience-level"></p>
+                <div class="exp-bar">
+                    <div id="exp-inner"></div>
+                </div>
+            </div>
+            <div class="img-section">
+                画像を入れてね
+            </div>
+        </div>
+        
+
+        <!--
+        <div class="bottom-section">
+            <button id=btn onclick="goBack()">トップへ戻る</button>
+        </div>
+        -->
+        
+        <div class="btn btn-svg" id="btn">
+            <svg>
+              <rect x="2" y="2" rx="0" fill="none" width=200 height="50"></rect>
+            </svg>
+            <span>トップへ戻る</span>
+        </div>
+    </div>
+</main>
+</div>
+<script src="../js/levup.js"></script>
+<div id="particles-js"></div>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="../js/ansanim.js"></script>
+<script src="../js/exp.js"></script>
+
+
+</body>
+</html>
+
+<script>
+    function goBack() {
+        location.href = "../index.html";
+    }
+</script>
